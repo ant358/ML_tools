@@ -1,4 +1,5 @@
 # ML_tools  
 
-## A collection to machine learning tools I use regulary  
-Mainly built as a place to keep them rather than searching through various past projects.
+## A collection to machine learning tools I use regularly  
+I built this as a library to hopefully save time in the future searching through old projects to trying to find basic model templates and tools I remember building or adapting.
+
