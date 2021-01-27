@@ -4,6 +4,7 @@ def reduce_memory_usage(df):
 
     start_memory = round(df.memory_usage().sum() / 1024**2, 2)
     print(f"Memory usage of dataframe is {start_memory} MB")
+    print("Reducing Memory")
 
     for col in df.columns:
         col_type = df[col].dtype
@@ -43,6 +44,4 @@ def reduce_memory_usage(df):
     percent_reduced = round(100 * (start_memory - end_memory) / start_memory, 2)
     print(f"Reduced by {percent_reduced} % ")
     return df
-
-    print("Reducing Memory")
     
