@@ -44,7 +44,7 @@ def feature_importance_reg(df, target):
     # create the output table
     features_df = pd.DataFrame({'features': feat_labels, 'importance': feat_importance, 'std': std} )
     features_df.sort_values('importance', inplace=True, ascending=False)
-    print(features_df)
+    print(features_df.head(10))
     # create the output graph
     plt.figure(figsize=(8,5))
     plt.bar(x='features', height='importance',
@@ -99,7 +99,7 @@ def feature_importance_class(df, target):
     # create the output table
     features_df = pd.DataFrame({'features': feat_labels, 'importance': feat_importance, 'std': std} )
     features_df.sort_values('importance', inplace=True, ascending=False)
-    print(features_df)
+    print(features_df.head(10))
     # create the output graph
     plt.figure(figsize=(8,5))
     plt.bar(x='features', height='importance',
