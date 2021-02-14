@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+
 def reduce_memory_usage(df):
     """Reduce the memory used by a pandas dataframe
     """
@@ -45,3 +48,14 @@ def reduce_memory_usage(df):
     print(f"Reduced by {percent_reduced} % ")
     return df
     
+    
+def mem_used(df):
+    """How much memory is that dataframe using?
+    Useful on sites like kaggle"""
+    size_mb = df.memory_usage().sum() / 1024 / 1024
+    print("Test memory size: %.2f MB" % test_size_mb)
+    
+def convert_to_sparse(df):
+    """Save memory by converting dataframes to sparse arrays"""
+    return df.replace(0, np.nan).to_sparse()
+
