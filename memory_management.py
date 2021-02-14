@@ -1,3 +1,13 @@
+
+"""
+A file of useful functions to reduce and analyse memory usage.
+
+Tip: Use %whos in notebooks to list var's and types currently in memory
+
+"""
+
+
+
 import numpy as np
 import pandas as pd
 
