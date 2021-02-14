@@ -1,5 +1,5 @@
 # ML_tools  
 
 ## A collection to machine learning tools I use regularly  
-I built this as a library to hopefully save time in the future searching through old projects to trying to find basic model templates and tools I remember building or adapting.
+I am slowly going through my old projects and building this library of tools. Hopefully, the library will save time in the future; no longer searching through old projects to trying to find templates and tools I remember creating or adapting.
 
