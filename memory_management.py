@@ -6,6 +6,8 @@ Tip: Use %whos in notebooks to list var's and types currently in memory
 
 """
 
+# For using a temporary HDD memory cache see: https://scikit-learn.org/stable/auto_examples/compose/plot_compare_reduction.html
+
 
 
 import numpy as np
