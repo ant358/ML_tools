@@ -33,7 +33,7 @@ def feature_importance(df, target, reg=False):
     y_train = df[target]
     X_train = df.drop([target], axis=1)
     # Create a random forest model
-    if reg = True:
+    if reg == True:
         clf = RandomForestRegressor(n_estimators=100, random_state=0, n_jobs=-1)
     else:
         clf = RandomForestClassifier(n_estimators=100, random_state=0, n_jobs=-1)
