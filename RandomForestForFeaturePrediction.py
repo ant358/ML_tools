@@ -65,3 +65,42 @@ def feature_importance(df, target, reg=False):
     # unquote to return the df
     # return features_df
     
+    def feature_importance_from_array(X, y, X_cols):
+        """Use a random forest to compute 
+        the relative importance of each feature
+
+        Args:
+            X ([array]): numpy array of the feature columns
+            y ([array]): numpy array of the label
+            X_cols (list): feature names
+        """
+        # Create a random forest model
+        clf = RandomForestClassifier(n_estimators=100, random_state=0, n_jobs=-1)
+
+        # Train the model
+        clf.fit(X, y)
+
+        # collect the feature labels
+        feat_labels = X_cols
+        feat_importance = list(clf.feature_importances_)
+        # get the standard deviation
+        std = list(np.std([tree.feature_importances_ for tree in clf.estimators_],
+                     axis=0))
+        # create the output table
+        features_df = pd.DataFrame({'features': feat_labels, 'importance': feat_importance, 'std': std} )
+        features_df.sort_values('importance', inplace=True, ascending=False)
+        print(features_df.head(10))
+        # create the output graph
+        plt.figure(figsize=(8,5))
+        plt.bar(x='features', height='importance',
+                data=features_df, yerr='std')
+        # plt.ylim(-0.1, 0.5)
+        plt.ylabel('Metric Importance')
+        plt.grid(b=1, axis='y')
+        plt.title(f'The Importance of Features that predict the label')
+        plt.xticks(rotation=90)
+        plt.show()
+
+        # unquote to return the df
+        # return features_df
+    
